@@ -18,7 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Implement this function!
         
-        return "Hi :D"
+        var answer = ""
+        
+        for (key, value) in trivia {
+            let capital = Array(value.lowercased().characters)
+            let state = Array(key.lowercased().characters)
+            
+            let characterCheck = state.filter{ capital.contains($0)}
+            print(characterCheck)
+            
+            if characterCheck.isEmpty {
+                answer = key
+            }
+        }
+        return answer
         
     }
     
